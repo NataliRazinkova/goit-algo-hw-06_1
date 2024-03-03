@@ -34,6 +34,12 @@ class Record:
             if phone.value == old_phone_number:
                 phone.value = new_phone_number
 
+    
+    def  find_phone(self, phone_number):
+        found_phones = [phone for phone in self.phones if phone.value == phone_number]
+        return found_phones
+
+
     def __str__(self):
         return f"Contact name: {self.name.value}, phones: {'; '.join(p.value for p in self.phones)}"
 
